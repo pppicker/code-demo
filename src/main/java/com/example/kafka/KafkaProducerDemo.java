@@ -20,6 +20,17 @@ public class KafkaProducerDemo {
         properties.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");
         //value的序列化方式
         properties.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer");
+
+        //是否需要认证
+//        String username = "";
+//        String password = "";
+//        properties.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SASL_PLAINTEXT");
+//        properties.put(SaslConfigs.SASL_MECHANISM, "PLAIN");
+//        Password jaasConfig = new Password(PlainLoginModule.class.getName() + " required username =\""
+//                + username + "\" password=\"" + password + "\";");
+//        properties.put(SaslConfigs.SASL_JAAS_CONFIG, jaasConfig);
+
+
         producer = new KafkaProducer<>(properties);
     }
     //发送消息不关注返回结果

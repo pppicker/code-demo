@@ -1,11 +1,15 @@
 package com.example.kafka;
 
 import com.example.utils.DateUtil;
+import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.consumer.OffsetAndTimestamp;
 import org.apache.kafka.common.TopicPartition;
+import org.apache.kafka.common.config.SaslConfigs;
+import org.apache.kafka.common.config.types.Password;
+import org.apache.kafka.common.security.plain.PlainLoginModule;
 
 import java.util.*;
 
@@ -28,7 +32,16 @@ public class KafkaConsumerDemo {
 //        properties.put("auto.offset.reset", "earliest");
         properties.put("group.id","test");
         properties.put("enable.auto.commit", "false");
-        properties.put("max.poll.RECORDS", 3);
+//        properties.put("max.poll.RECORDS", 3);
+        //是否需要认证
+//        String username = "";
+//        String password = "";
+//        properties.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SASL_PLAINTEXT");
+//        properties.put(SaslConfigs.SASL_MECHANISM, "PLAIN");
+//        Password jaasConfig = new Password(PlainLoginModule.class.getName() + " required username =\""
+//                + username + "\" password=\"" + password + "\";");
+//        properties.put(SaslConfigs.SASL_JAAS_CONFIG, jaasConfig);
+
         consumer = new KafkaConsumer<String, String>(properties);
         consumer.subscribe(Arrays.asList("final-test"));
     }
