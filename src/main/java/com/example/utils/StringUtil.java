@@ -11,9 +11,17 @@ public class StringUtil {
     public static void main(String[] args) {
         Date date = new Date();
         System.out.println(date.toString());
+
+        String dd = "";
+        if(dd.isEmpty()) {
+
+        }
+
     }
 
-    public static void json2str(JSONOb) {
 
-    }
+
+//    public static void json2str(JSONOb) {
+//
+//    }
 }
