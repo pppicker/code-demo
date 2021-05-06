@@ -1,1 +1,4 @@
-spark test spark hello spark word spark run
+spark test
+spark hello
+spark word
+spark run
