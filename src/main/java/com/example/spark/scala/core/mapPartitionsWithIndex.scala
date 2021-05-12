@@ -24,10 +24,6 @@ object mapPartitionsWithIndex {
       }
     )
     resultRDD.collect().foreach(println(_))
-
-
-
-
     sc.stop()
   }
 

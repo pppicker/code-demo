@@ -44,10 +44,6 @@ object groupBy {
 
     resultRDD.collect().foreach(println(_))
 
-
-
     sc.stop()
-
-
   }
 }
